@@ -1,0 +1,84 @@
+<main>
+  <section class="container-fluid d-flex flex-column justify-content-center bg-light p-5 h-50">
+    <h2 class="text-center text-capitalize fs-1">¡Bienvenido!</h2>
+    <p class="text-center fs-4 w-80">Ya que estas en nuestro sitio, animate y <a href="">conocenos </a>como empresa.
+      Además tenemos una variedad de <a href="">productos </a> que sabemos que necesitas</p>
+  </section>
+  <section class="d-flex flex-column justify-content-center bg-white shadow-sm p-5">
+    <h2 class="text-center text-capitalize fs-1 mb-5">Productos y servicios</h2>
+    <div id="carouselExampleControls" class="carousel carousel-dark slide mt-5" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="card mb-3 ms-auto me-auto" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title">Plan 1</h3>
+                  <p class="card-text fs-4">This is a wider card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" *ngFor="let p for of listadoRegistros">
+          <div class="card mb-3 ms-auto me-auto" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="img/logoVidaAnimal.svg" class="img-fluid rounded-start">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title">{{p.nombre}}</h3>
+                  <p class="card-text fs-4">{{p.descripcion}}</p>
+                  <p class="card-text"><small class="text-muted">Precio: {{p.precio}}</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+  </section>
+  <section class="container-fluid d-flex flex-column justify-content-center bg-light p-4">
+    <h2 class="text-center text-capitalize fs-1">¿Quienes somos?</h2>
+    <p class="text-center text-light fs-4 w-70">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla
+      ad, placeat vitae officia aliquam sed? Illum cum autem eaque?</p>
+    <div class="row g-4">
+      <article class="col-12">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Misión</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+          </div>
+        </div>
+      </article>
+      <article class="col-12">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Visión</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+          </div>
+        </div>
+
+      </article>
+    </div>
+  </section>
+</main>

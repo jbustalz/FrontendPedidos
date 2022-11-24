@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg bg-white shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/inicio"><img src="img/logoVidaAnimal.svg" width="120" height="60"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/inicio">Home</a>
+        </li>
+        <li class="nav-item" *ngIf="seInicioSesion">
+          <a class="nav-link" routerLink="/producto/productos">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/usuario/crearUsuario" *ngIf="seInicioSesion">Registrese</a>
+        </li>
+        <li class="nav-item" *ngIf="seInicioSesion">
+          <a class="nav-link" routerLink="/seguridad/cerrarSesion">Cerrar Sesión</a>
+        </li>
+        <li class="nav-item dropdown" *ngIf="!seInicioSesion">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Iniciar sesión
+          </a>
+          <form class="dropdown-menu p-4" [formGroup]="fgValidador" (ngSubmit)="IdentificarUsuario()">
+            <div class="mb-3">
+              <label for="exampleDropdownFormEmail2" class="form-label">Correo</label>
+              <input formControlName="usuario" type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+            </div>
+            <div class="mb-3">
+              <label for="exampleDropdownFormPassword2" class="form-label">Contraseña</label>
+              <input formControlName="clave" type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+            </div>
+            <button [disabled]="!fgValidador.valid" type="submit" class="btn btn-primary">Ingresar</button>
+          </form>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
